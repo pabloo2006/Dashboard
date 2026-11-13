@@ -9,11 +9,12 @@ body {
     background-color: #0f172a;
     color: #f8fafc;
     padding: 16px;
+    padding-bottom: 40px;
 }
 
 header {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 header h1 {
@@ -48,29 +49,117 @@ header p {
     padding-bottom: 8px;
 }
 
-ul {
-    list-style: none;
+.input-group {
+    margin-bottom: 12px;
 }
 
-ul li {
-    margin-bottom: 8px;
-}
-
-ul li a, .task-item {
-    color: #e2e8f0;
-    text-decoration: none;
-    font-size: 0.95rem;
-}
-
-.task-item {
-    background-color: #334155;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-}
-
-.task-item p {
+.input-group label {
+    display: block;
     font-size: 0.85rem;
     color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #38bdf8;
+    color: #0f172a;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
     margin-top: 4px;
+}
+
+.summary-stats {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.stat-box {
+    flex: 1;
+    background-color: #334155;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #34d399;
+}
+
+.turno-item {
+    background-color: #334155;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.turno-info p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.turno-info strong {
+    font-size: 1rem;
+    color: #f8fafc;
+}
+
+.turno-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.badge-pagado {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.pagado-si {
+    background-color: #065f46;
+    color: #34d399;
+}
+
+.pagado-no {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+}
+
+.btn-eliminar {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 0.75rem;
+    cursor: pointer;
+    text-decoration: underline;
 }

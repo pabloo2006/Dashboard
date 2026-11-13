@@ -3,37 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Dashboard Personal</title>
+    <title>Mi Dashboard Laboral</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>⚡ Mi Dashboard</h1>
-        <p>Control móvil de proyectos y recursos</p>
+        <p>Control de Restaurante y Ahorros</p>
     </header>
 
     <main class="dashboard-container">
-        <!-- Sección: Lo que tengo guardado -->
+        
+        <!-- Tarjeta de Configuración y Resumen Financiero -->
         <section class="card">
-            <h2>💾 Guardados & Recursos</h2>
-            <ul id="lista-guardados">
-                <li><a href="#" target="_blank">Enlace o recurso de interés 1</a></li>
-                <li><a href="#" target="_blank">Documentación técnica</a></li>
-            </ul>
+            <h2>⚙️ Configuración & Resumen</h2>
+            <div class="input-group">
+                <label for="precio-hora">Precio por Hora (€):</label>
+                <input type="number" id="precio-hora" step="0.5" value="10" oninput="actualizarCalculos()">
+            </div>
+            <div class="input-group">
+                <label for="total-ahorrado">Ahorro Total (€):</label>
+                <input type="number" id="total-ahorrado" step="10" value="0" oninput="actualizarCalculos()">
+            </div>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <span class="stat-label">Ganancia Semanal</span>
+                    <span class="stat-value" id="ganancia-semanal">0.00 €</span>
+                </div>
+            </div>
         </section>
 
-        <!-- Sección: Lo que trabajo -->
+        <!-- Sección: Registrar Turno de Trabajo -->
         <section class="card">
-            <h2>💻 Trabajo & Tareas</h2>
-            <div class="task-item">
-                <strong>AppGestionFichajes</strong>
-                <p>Revisar rutas y endpoints REST API</p>
-            </div>
-            <div class="task-item">
-                <strong>Dashboard Personal</strong>
-                <p>Desplegar en GitHub Pages</p>
+            <h2>🍽️ Registrar Turno de Restaurante</h2>
+            <form id="form-turno" onsubmit="agregarTurno(event)">
+                <div class="input-group">
+                    <label for="fecha-turno">Fecha:</label>
+                    <input type="date" id="fecha-turno" required>
+                </div>
+                <div class="input-group">
+                    <label for="horas-turno">Horas trabajadas:</label>
+                    <input type="number" id="horas-turno" step="0.5" min="0.5" placeholder="Ej. 6" required>
+                </div>
+                <button type="submit" class="btn-primary">Añadir Turno</button>
+            </form>
+        </section>
+
+        <!-- Sección: Historial de Turnos y Pagos -->
+        <section class="card">
+            <h2>📋 Control de Turnos & Pagos</h2>
+            <div id="lista-turnos" class="turno-list">
+                <!-- Los turnos se cargan dinámicamente aquí -->
             </div>
         </section>
+
     </main>
+
+    <script src="app.js"></script>
 </body>
 </html>
